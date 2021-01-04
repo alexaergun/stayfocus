@@ -11,8 +11,10 @@
   "dependencies": {
     "express": "^4.17.1",
     "express-handlebars": "^5.2.0",
+    "heroku": "^7.47.6",
     "mysql": "^2.18.1",
-    "stack": "^0.1.0"
+    "stack": "^0.1.0",
+    "toolbelt": "^0.1.7"
   },
   "devDependencies": {},
   "description": ""

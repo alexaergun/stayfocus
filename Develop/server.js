@@ -1,14 +1,14 @@
 // This sets up the basic properties for our express server
-var express = require("express");
-var path = require("path");
-var fs = require('fs');
-var util = require('util');
+const express = require("express");
+const path = require("path");
+const fs = require('fs');
+const util = require('util');
 
 // Tells node that we are creating an "express" server
-var app = express();
+const app = express();
 
 // Sets an initial port. We"ll use this later in our listener
-var PORT = process.env.PORT || 8000;
+const PORT = process.env.PORT || 8000;
 
 // Sets up the Express app to handle data parsing
 app.use(express.urlencoded({ extended: true }));
@@ -38,7 +38,7 @@ app.get("/api/notes", function (req, res) {
 });
 
 app.post("/api/notes", function (req, res) {
-    var newNote = req.body;
+    const newNote = req.body;
     readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
         .then(function (data) {
             allNotes = JSON.parse(data);
@@ -58,7 +58,7 @@ app.post("/api/notes", function (req, res) {
 });
 
 app.delete("/api/notes/:id", function (req, res) {
-    var id = req.params.id;
+    const id = req.params.id;
     readFileAsync(path.join(__dirname, "./db/db.json"), "utf8")
         .then(function (data) {
             allNotes = JSON.parse(data);
